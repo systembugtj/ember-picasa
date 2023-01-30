@@ -13,7 +13,7 @@
 ## Installation
 
 ```
-ember install ember-picasa
+ember install @systembug/ember-picasa
 ```
 
 

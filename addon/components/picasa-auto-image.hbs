@@ -1,0 +1,9 @@
+{{! template-lint-disable no-inline-styles }}
+asldalsdj
+<div class="auto-image" width={{@width}} height={{@height}}
+    {{did-insert this.setupInViewport}}
+    >
+  {{#if this.isVisible}}
+    <img alt={{this.title}} {{auto-scale @src @width @height @fallbackSrc}}>
+  {{/if}}
+</div>
