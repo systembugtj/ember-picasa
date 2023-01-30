@@ -6,8 +6,8 @@ import { inject as service } from '@ember/service';
 export default class PicasaAutoImage extends Component {
   @service inViewport;
 
-  title = '';
   @tracked isVisible = true;
+  @tracked title = '';
 
   @action
   setupInViewport(element) {
