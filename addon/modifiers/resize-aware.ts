@@ -100,6 +100,7 @@ export default class ResizeAwareModifier extends Modifier<ResizeAwareSignature> 
             width: w,
             height: h,
             event: evt,
+            debounced: false,
           },
         })
       );
@@ -116,11 +117,12 @@ export default class ResizeAwareModifier extends Modifier<ResizeAwareSignature> 
       (this.resizeHeightSensitive && this._oldViewHeightDebounced !== h)
     ) {
       this.target?.dispatchEvent(
-        new CustomEvent('delayresized', {
+        new CustomEvent('resized', {
           detail: {
             width: w,
             height: h,
             event: evt,
+            debounced: true,
           },
         })
       );

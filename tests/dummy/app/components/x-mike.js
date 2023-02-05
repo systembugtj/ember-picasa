@@ -11,19 +11,7 @@ export default class XMikeComponent extends Component {
       {
         width: event.detail.width,
         height: event.detail.height,
-        debounced: false,
-      },
-    ];
-  }
-
-  @action
-  debouncedDidResize(event) {
-    this.resizeEvents = [
-      ...this.resizeEvents,
-      {
-        width: event.detail.width,
-        height: event.detail.height,
-        debounced: true,
+        debounced: event.detail.debounced,
       },
     ];
   }
