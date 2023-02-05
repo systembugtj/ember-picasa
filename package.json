@@ -26,13 +26,16 @@
     "test:ember-compatibility": "ember try:each",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "deploy": "ember build --environment production && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prepack": "ember ts:precompile",
+    "postpack": "ember ts:clean"
   },
   "dependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.2.0"
+    "ember-cli-htmlbars": "^6.2.0",
+    "ember-cli-typescript": "^5.2.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.13.12",
@@ -43,6 +46,30 @@
     "@embroider/test-setup": "^2.0.2",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
+    "@tsconfig/ember": "^2.0.0",
+    "@types/ember": "^4.0.3",
+    "@types/ember__application": "^4.0.5",
+    "@types/ember__array": "^4.0.3",
+    "@types/ember__component": "^4.0.12",
+    "@types/ember__controller": "^4.0.4",
+    "@types/ember__debug": "^4.0.3",
+    "@types/ember__destroyable": "^4.0.1",
+    "@types/ember__engine": "^4.0.4",
+    "@types/ember__error": "^4.0.2",
+    "@types/ember__object": "^4.0.5",
+    "@types/ember__polyfills": "^4.0.1",
+    "@types/ember__routing": "^4.0.12",
+    "@types/ember__runloop": "^4.0.2",
+    "@types/ember__service": "^4.0.2",
+    "@types/ember__string": "^3.0.10",
+    "@types/ember__template": "^4.0.1",
+    "@types/ember__test": "^4.0.1",
+    "@types/ember__test-helpers": "^2.9.1",
+    "@types/ember__utils": "^4.0.2",
+    "@types/ember-qunit": "^6.1.1",
+    "@types/ember-resolver": "^9.0.0",
+    "@types/qunit": "^2.19.4",
+    "@types/rsvp": "^4.0.4",
     "auto-changelog": "^2.4.0",
     "babel-eslint": "^8.2.6",
     "broccoli-asset-rev": "^3.0.0",
@@ -85,6 +112,7 @@
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
     "sass": "^1.57.1",
+    "typescript": "4.6",
     "webpack": "^5.75.0"
   },
   "peerDependencies": {
@@ -98,5 +126,9 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "volta": {
+    "node": "16.17.1",
+    "yarn": "1.22.19"
   }
 }

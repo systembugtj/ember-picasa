@@ -26,3 +26,12 @@ body {
     }
   }
 }
+.resize-events li.debounced {
+  position: relative;
+  white-space: nowrap;
+}
+
+.resize-events li.debounced:after {
+  content: 'DEBOUNCED';
+  margin-left: 15px;
+}
