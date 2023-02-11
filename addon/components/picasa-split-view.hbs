@@ -1,1 +1,9 @@
-{{yield}}
+<div class={{this.computedClassnames}} role="button"
+  {{did-insert this.setupSplits}}
+  {{did-update this.updateSplits}}
+  {{on 'mousemove' this.handleMouseMove}}
+  {{on 'mouseleave' this.handleMouseLeave}}
+  {{on 'mouseup' this.handleMouseUp}}
+  >
+  {{yield (hash child=(component "picasa-split-child" parent=this) sash=(component "picasa-split-sash" parent=this)) }}
+</div>

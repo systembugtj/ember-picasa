@@ -1,1 +1,7 @@
-{{yield}}
+{{!-- template-lint-disable no-pointer-down-event-binding --}}
+<div class={{this.computedClassnames}} role="button"
+  {{did-insert this.updateStyle}}
+  {{did-update this.refreshStyle}}
+  {{on "mousedown" this.mouseDown}}>
+  {{yield}}
+</div>

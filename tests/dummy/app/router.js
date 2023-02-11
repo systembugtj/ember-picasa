@@ -8,4 +8,6 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route('injection-factories');
+  this.route('vertical');
+  this.route('horizontal');
 });
